@@ -41,7 +41,7 @@ export function parse(content: string) {
           break;
       }
     } else if (line) {
-      item.url = line;
+      item.url = line.trim();
       items.push(item);
       item = { url: '' };
     }
