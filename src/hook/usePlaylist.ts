@@ -5,6 +5,8 @@ import { Item, parse } from '../lib/m3u-parser';
 const builtinPlaylists = parse(`#EXTM3U
 #EXTINF:-1 ,国内电视台直播源
 https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E5%9B%BD%E5%86%85%E7%94%B5%E8%A7%86%E5%8F%B02022-7.m3u
+#EXTINF:-1 ,台湾香港澳门电视台直播源
+https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E5%8F%B0%E6%B9%BE%E9%A6%99%E6%B8%AF%E6%BE%B3%E9%97%A82022-7.m3u
 #EXTINF:-1 ,国外电视台直播源
 https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E5%9B%BD%E5%A4%96%E7%94%B5%E8%A7%86%E5%8F%B02022-7.m3u
 #EXTINF:-1 ,iptv-org 频道
