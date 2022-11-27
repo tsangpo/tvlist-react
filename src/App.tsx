@@ -12,10 +12,12 @@ import {
   Text,
   TextInput,
   ThemeProvider,
+  Truncate,
 } from '@primer/react';
 import { useState } from 'react';
 
 import { HlsVideo } from './component/HlsVideo';
+import { PlaylistNavList } from './component/PlaylistNavList';
 import { usePlaylist } from './hook/usePlaylist';
 
 export const App: React.FunctionComponent = () => {
@@ -77,22 +79,15 @@ export const App: React.FunctionComponent = () => {
             {!playlistItems ? (
               <Spinner />
             ) : (
-              <NavList>
-                {playlistItems
-                  .filter(
-                    (item) =>
-                      !filterText || item.inf?.name.toLowerCase().includes(filterText.toLowerCase())
-                  )
-                  .map((item) => (
-                    <NavList.Item
-                      key={item.url}
-                      aria-current={item.url == selectedChannel?.url}
-                      onClick={() => setSelectedChannel(item)}
-                    >
-                      {item.inf?.name}
-                    </NavList.Item>
-                  ))}
-              </NavList>
+              <PlaylistNavList
+                playlistItems={playlistItems.filter(
+                  (item) =>
+                    item.inf?.name &&
+                    (!filterText || item.inf?.name.toLowerCase().includes(filterText.toLowerCase()))
+                )}
+                selectedChannel={selectedChannel}
+                setSelectedChannel={setSelectedChannel}
+              />
             )}
           </SplitPageLayout.Pane>
           <SplitPageLayout.Content>
